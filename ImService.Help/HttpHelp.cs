@@ -61,7 +61,7 @@ namespace ImService.Help
         /// <param name="json">发送内容，一般使用json序列化</param>
         /// <param name="charset">编码，默认“utf-8”</param>
         /// <returns></returns>
-        public static string Post(string url, string json, IDictionary<string, string> heads = null, string charset = "utf-8")
+        public static string Post(string url,  string json, IDictionary<string, string> heads = null, string charset = "utf-8")
         {
             try
             {
@@ -77,7 +77,7 @@ namespace ImService.Help
                     }
                 }
                 // 设置请求的参数形式
-                request.ContentType = string.Format("application/json; charset={0}", charset);
+                request.ContentType = string.Format("application/x-www-form-urlencoded;charset=utf-8");
 
                 var encoding = new UTF8Encoding();
                 var byte1 = encoding.GetBytes(json);
